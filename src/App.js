@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import ClassCode from './Component/SirCode';
+
 
 function App() {
+  const [positionY, setY]= useState(300)
+  const [positionX, setX]= useState(500)
+
+  const changePosition=(action)=>{
+    if(action==='left'){
+      positionX > 10 ? setX(positionX - 50) : alert('Border End')
+    }
+    else if(action === 'right'){
+      positionX < 1350 ? setX(positionX + 50) : alert('Border End')
+    }
+    else if(action ==='top'){
+      positionY > 0 ? setY(positionY - 50) : alert('Border End')
+        }    
+    else{
+      positionY < 1080? setY(positionY + 50) : alert('Border End')
+    }
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+  <div className='container'>
+   <div className='btn'>
+   <button onClick={()=>changePosition('left')}>Left</button>
+   <button onClick={()=>changePosition('right')}>Right</button>
+   <button onClick={()=>changePosition('top')}>Top</button>
+   <button onClick={()=>changePosition('down')}>Down</button>
+   </div>
+   <div className="circle" style={{
+    backgroundColor:'blue', 
+    marginLeft:positionX + 'px',
+    marginTop:positionY + 'px',
+    width:'100px',
+    height:'100px',
+    borderRadius:'50px',
+    
+  }}>
+  </div>
+   </div>
+   <ClassCode></ClassCode>
+   </div>
   );
 }
 
 export default App;
+
+
