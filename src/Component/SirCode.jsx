@@ -1,4 +1,4 @@
-// import './App.css';
+//  import './App.css';
 import React, { useState } from 'react';
 
 const ClassCode=()=>{
@@ -22,7 +22,10 @@ const ClassCode=()=>{
     }
 }
   return (
-    <>
+    <div style={{
+      width:'1000px',
+      height:'1000px'
+    }}>
     <button onClick={()=>moveX('left')}>left</button>
     <button onClick={()=>moveX('right')}>right</button>
     <button onClick={()=>moveY('up')}>up</button>
@@ -35,7 +38,7 @@ const ClassCode=()=>{
       marginLeft: positionX+'px'
     }}>
     </div>
-    </>
+    </div>
   );
 }
 export default ClassCode;
