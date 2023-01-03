@@ -1,10 +1,11 @@
-import './App.css';
+//  import './App.css';
 import React, { useState } from 'react';
 
-const App=()=> {
+const ClassCode=()=>{
  const [positionY, setPositionY] = useState(300)
  const [positionX, setPositionX] = useState(500)
   const moveX = (action)=> {
+    setPositionY(300)
       if(action==='left'){
         setPositionX(300)
       }else if(action==='right'){
@@ -13,6 +14,7 @@ const App=()=> {
   }
 
   const moveY = (action)=> {
+    setPositionX(500)
     if(action==='up'){
       setPositionY(100)
     }else if(action==='down'){
@@ -20,7 +22,10 @@ const App=()=> {
     }
 }
   return (
-    <>
+    <div style={{
+      width:'1000px',
+      height:'1000px'
+    }}>
     <button onClick={()=>moveX('left')}>left</button>
     <button onClick={()=>moveX('right')}>right</button>
     <button onClick={()=>moveY('up')}>up</button>
@@ -33,7 +38,7 @@ const App=()=> {
       marginLeft: positionX+'px'
     }}>
     </div>
-    </>
+    </div>
   );
 }
-export default App;
+export default ClassCode;

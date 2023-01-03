@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
-import ClassCode from './Component/SirCode';
 
 
 function App() {
@@ -43,7 +42,6 @@ function App() {
   }}>
   </div>
    </div>
-   <ClassCode></ClassCode>
    </div>
   );
 }
